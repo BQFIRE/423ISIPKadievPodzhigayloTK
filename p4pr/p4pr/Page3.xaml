@@ -1,0 +1,151 @@
+﻿<Page x:Class="p4pr.Page3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Page3"
+      Background="#F0F0F0">
+
+    <Grid Margin="20" Background="#F0F0F0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="380"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer Grid.Column="0"
+                      VerticalScrollBarVisibility="Auto"
+                      Background="#F0F0F0">
+            <StackPanel Background="#F0F0F0">
+                <TextBlock Text="Третья страница"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Foreground="Black"
+                           Margin="0,0,0,20"/>
+
+                <Border BorderBrush="Gray"
+                        BorderThickness="1"
+                        Background="#F0F0F0"
+                        Padding="15"
+                        Margin="0,0,0,20">
+                    <TextBlock Text="y = 1.2(a - b)^3 · e^(x^2) + x"
+                               FontSize="18"
+                               Foreground="Black"/>
+                </Border>
+
+                <GroupBox Header="Ввод данных"
+                          Margin="0,0,0,15"
+                          Background="#F0F0F0"
+                          Foreground="Black"
+                          BorderBrush="Gray">
+                    <StackPanel Margin="10">
+                        <StackPanel Orientation="Horizontal" Margin="0,8">
+                            <Label Content="x0:" Width="100" Background="#F0F0F0" Foreground="Black"/>
+                            <TextBox Name="txtX0"
+                                     Width="220"
+                                     Height="28"
+                                     Background="White"
+                                     Foreground="Black"
+                                     ToolTip="Начало отрезка"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,8">
+                            <Label Content="xk:" Width="100" Background="#F0F0F0" Foreground="Black"/>
+                            <TextBox Name="txtXk"
+                                     Width="220"
+                                     Height="28"
+                                     Background="White"
+                                     Foreground="Black"
+                                     ToolTip="Конец отрезка"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,8">
+                            <Label Content="dx:" Width="100" Background="#F0F0F0" Foreground="Black"/>
+                            <TextBox Name="txtDx"
+                                     Width="220"
+                                     Height="28"
+                                     Background="White"
+                                     Foreground="Black"
+                                     ToolTip="Шаг"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,8">
+                            <Label Content="a:" Width="100" Background="#F0F0F0" Foreground="Black"/>
+                            <TextBox Name="txtA"
+                                     Width="220"
+                                     Height="28"
+                                     Background="White"
+                                     Foreground="Black"
+                                     ToolTip="Введите a"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,8">
+                            <Label Content="b:" Width="100" Background="#F0F0F0" Foreground="Black"/>
+                            <TextBox Name="txtB"
+                                     Width="220"
+                                     Height="28"
+                                     Background="White"
+                                     Foreground="Black"
+                                     ToolTip="Введите b"/>
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Результаты"
+                          Margin="0,0,0,15"
+                          Background="#F0F0F0"
+                          Foreground="Black"
+                          BorderBrush="Gray">
+                    <StackPanel Margin="10">
+                        <TextBox Name="txtOutput"
+                                 Width="320"
+                                 Height="260"
+                                 AcceptsReturn="True"
+                                 VerticalScrollBarVisibility="Auto"
+                                 HorizontalScrollBarVisibility="Auto"
+                                 IsReadOnly="True"
+                                 Background="White"
+                                 Foreground="Black"
+                                 ToolTip="Здесь выводятся значения x и y"/>
+                    </StackPanel>
+                </GroupBox>
+
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <Button Name="btnCalc3"
+                            Content="Вычислить"
+                            Width="130"
+                            Height="35"
+                            Margin="5"
+                            Click="btnCalc3_Click"
+                            Background="#E1E1E1"
+                            Foreground="Black"
+                            BorderBrush="Gray"
+                            ToolTip="Вычислить и построить график"/>
+
+                    <Button Name="btnClear3"
+                            Content="Очистить"
+                            Width="130"
+                            Height="35"
+                            Margin="5"
+                            Click="btnClear3_Click"
+                            Background="#E1E1E1"
+                            Foreground="Black"
+                            BorderBrush="Gray"
+                            ToolTip="Очистить поля и график"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
+        <GroupBox Grid.Column="1"
+                  Header="График функции"
+                  Margin="20,0,0,0"
+                  Background="#F0F0F0"
+                  Foreground="Black"
+                  BorderBrush="Gray">
+            <Grid>
+                <Canvas Name="graphCanvas"
+                        Background="White"
+                        Width="600"
+                        Height="500"
+                        Margin="10"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Page>
