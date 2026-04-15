@@ -1,0 +1,144 @@
+﻿<Page x:Class="p4pr.Page2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Page2"
+      Background="#F0F0F0">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Background="#F0F0F0">
+        <Grid Margin="20" Background="#F0F0F0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       Text="Вторая страница"
+                       FontSize="24"
+                       FontWeight="Bold"
+                       Foreground="Black"
+                       Margin="0,0,0,20"/>
+
+            <Border Grid.Row="1"
+                    BorderBrush="Gray"
+                    BorderThickness="1"
+                    Background="#F0F0F0"
+                    Padding="15"
+                    Margin="0,0,0,20">
+                <TextBlock Text="b = { ln(f(x)) + (f(x)^2 + y)^3, если x/y > 0; ln|f(x)/y| + (f(x) + y)^3, если x/y &lt; 0; (f(x)^2 + y)^3, если x = 0; 0, если y = 0 }"
+                           TextWrapping="Wrap"
+                           FontSize="16"
+                           Foreground="Black"/>
+            </Border>
+
+            <Grid Grid.Row="2" Margin="0,0,0,15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="420"/>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
+
+                <GroupBox Grid.Column="0"
+                          Header="Ввод данных"
+                          Margin="0,0,15,0"
+                          Background="#F0F0F0"
+                          Foreground="Black"
+                          BorderBrush="Gray">
+                    <StackPanel Margin="10">
+                        <StackPanel Orientation="Horizontal" Margin="0,8">
+                            <Label Content="x:"
+                                   Width="100"
+                                   Background="#F0F0F0"
+                                   Foreground="Black"/>
+                            <TextBox Name="txtX2"
+                                     Width="220"
+                                     Height="28"
+                                     Background="White"
+                                     Foreground="Black"
+                                     ToolTip="Введите значение x"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,8">
+                            <Label Content="y:"
+                                   Width="100"
+                                   Background="#F0F0F0"
+                                   Foreground="Black"/>
+                            <TextBox Name="txtY2"
+                                     Width="220"
+                                     Height="28"
+                                     Background="White"
+                                     Foreground="Black"
+                                     ToolTip="Введите значение y"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,8">
+                            <Label Content="Ответ:"
+                                   Width="100"
+                                   Background="#F0F0F0"
+                                   Foreground="Black"/>
+                            <TextBox Name="txtResult2"
+                                     Width="220"
+                                     Height="28"
+                                     IsReadOnly="True"
+                                     Background="White"
+                                     Foreground="Black"
+                                     ToolTip="Здесь отображается результат"/>
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Grid.Column="1"
+                          Header="Выбор функции f(x)"
+                          Background="#F0F0F0"
+                          Foreground="Black"
+                          BorderBrush="Gray">
+                    <StackPanel Margin="10">
+                        <RadioButton Name="rbSh"
+                                     Content="sh(x)"
+                                     IsChecked="True"
+                                     Margin="0,8"
+                                     Foreground="Black"
+                                     ToolTip="Гиперболический синус"/>
+
+                        <RadioButton Name="rbX2"
+                                     Content="x^2"
+                                     Margin="0,8"
+                                     Foreground="Black"
+                                     ToolTip="Квадрат x"/>
+
+                        <RadioButton Name="rbExp"
+                                     Content="e^x"
+                                     Margin="0,8"
+                                     Foreground="Black"
+                                     ToolTip="Экспонента e в степени x"/>
+                    </StackPanel>
+                </GroupBox>
+            </Grid>
+
+            <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,10,0,0">
+                <Button Name="btnCalc2"
+                        Content="Вычислить"
+                        Width="130"
+                        Height="35"
+                        Margin="5"
+                        Click="btnCalc2_Click"
+                        Background="#E1E1E1"
+                        Foreground="Black"
+                        BorderBrush="Gray"
+                        ToolTip="Вычислить значение функции"/>
+
+                <Button Name="btnClear2"
+                        Content="Очистить"
+                        Width="130"
+                        Height="35"
+                        Margin="5"
+                        Click="btnClear2_Click"
+                        Background="#E1E1E1"
+                        Foreground="Black"
+                        BorderBrush="Gray"
+                        ToolTip="Очистить поля"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>
